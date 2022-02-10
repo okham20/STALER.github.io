@@ -1,0 +1,126 @@
+.content_form {
+  color: white;
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title_form {
+  text-align: center;
+  font-size: 3em;
+}
+
+.title_form span {
+  color: #b70e21;
+}
+
+.wrapper_form {
+  box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.3);
+}
+
+.wrapper_form > * {
+  padding: 1em;
+}
+
+.data_form {
+  background: #222222;
+}
+
+.data_form form {
+  display: grid;
+  gap: 1em;
+  grid-template-columns: 1fr 1fr;
+}
+
+.data_form form .est {
+  grid-column: 1 / 3;
+}
+
+.data_form form p {
+  margin: 0;
+  padding: 1em;
+}
+
+.data_form form button,
+.data_form form input,
+.data_form form textarea {
+  width: 100%;
+  padding: 0.7em;
+  border: none;
+  background: none;
+  outline: none;
+  color: white;
+  border-bottom: 1px solid #d63031;
+}
+
+.data_form form textarea {
+  resize: none;
+}
+
+.data_form form button {
+  background: #b70e21;
+  border: 0;
+  border-radius: 0.5em;
+  text-transform: uppercase;
+  padding: 1em;
+}
+
+.data_form form button:hover,
+.data_form form button:focus {
+  background: #d63031;
+  color: rgb(0, 0, 0);
+  transition: background-color 1s ease-out;
+  transition: color 0.2s ease-out;
+  outline: 0;
+}
+
+.mail_to {
+  opacity: 0;
+}
+
+.info_form {
+  background: black;
+  padding: 1.5em;
+}
+
+.info_form h4,
+.info_form ul,
+.info_form p {
+  text-align: center;
+  margin: 0 0 1rem 0;
+}
+
+.info_form ul {
+  list-style: none;
+  padding: 0.2em;
+}
+
+.info_form ul li {
+  padding: 0.2em;
+}
+
+@media screen and (min-width: 700px) {
+  .content_form {
+    padding: 0.2rem 0.2rem;
+  }
+
+  .wrapper_form {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .wrapper_form > * {
+    padding: 2em;
+  }
+
+  .title_form {
+    margin: 3rem 0 2rem 0;
+  }
+
+  .info_form h4,
+  .info_form ul,
+  .info_form p {
+    padding: 1em;
+    text-align: left;
+  }
+}

@@ -1,0 +1,161 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:500);
+
+:root {
+  /* Base font size */
+  font-size: 10px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+  text-align: center;
+  background-color: #b9b9b9;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(180deg, #00000080 0%, #0000008c 100%),
+    url(images/back3.jpg);
+  background-size: cover;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 30%,
+    100% 80%,
+    70% 98%,
+    30% 98%,
+    0 80%,
+    0% 30%
+  );
+  z-index: -1;
+}
+
+.container {
+  max-width: 110rem;
+  margin: 0 auto;
+  padding: 0 1rem 1rem;
+}
+
+svg {
+  display: block;
+  font: 10.5em "Montserrat";
+  width: 960px;
+  height: 300px;
+  margin: 0 auto;
+  margin-bottom: 60px;
+}
+
+.text-copy {
+  fill: none;
+  stroke: white;
+  stroke-dasharray: 6% 29%;
+  stroke-width: 5px;
+  stroke-dashoffset: 0%;
+  animation: stroke-offset 5.5s infinite linear;
+}
+
+.text-copy:nth-child(1) {
+  stroke: #580300;
+  animation-delay: -1;
+}
+
+.text-copy:nth-child(2) {
+  stroke: #a10c0c;
+  animation-delay: -2s;
+}
+
+.text-copy:nth-child(3) {
+  stroke: #b64511;
+  animation-delay: -3s;
+}
+
+.text-copy:nth-child(4) {
+  stroke: #fc0000;
+  animation-delay: -4s;
+}
+
+.text-copy:nth-child(5) {
+  stroke: #d6d301;
+  animation-delay: -5s;
+}
+
+@keyframes stroke-offset {
+  100% {
+    stroke-dashoffset: -35%;
+  }
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  /* Compensate for excess margin on outer gallery flex items */
+  margin: -1rem -1rem;
+}
+
+.gallery-item {
+  /* Minimum width of 24rem and grow to fit available space */
+  flex: 1 0 24rem;
+  /* Margin value should be half of grid-gap value as margins on flex items don't collapse */
+  margin: 1rem;
+  box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+.gallery-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 400ms ease-out;
+}
+
+.gallery-image:hover {
+  transform: scale(1.1);
+}
+
+/*
+
+The following rule will only run if your browser supports CSS grid.
+
+Remove or comment-out the code block below to see how the browser will fall-back to flexbox styling. 
+
+*/
+
+@supports (display: grid) {
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+    grid-gap: 2rem;
+  }
+
+  .gallery,
+  .gallery-item {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    display: block;
+  }
+
+  svg {
+    display: block;
+    font: 21em "Montserrat";
+    width: 300px;
+    height: 100px;
+    margin: 0 auto;
+  }
+}
